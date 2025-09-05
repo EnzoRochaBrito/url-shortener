@@ -1,0 +1,43 @@
+
+services:
+  app:
+    build: .
+    container_name: url-shortener
+    ports:
+      - "9999:9999"
+    depends_on:
+      - redis
+      - db
+    environment:
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      DB_USER: meu_user
+      DB_PASSWORD: 123456
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: meu_db
+
+  db:
+    image: postgres:15
+    container_name: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: meu_user
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: meu_db
+    volumes:
+      - pgdata:/var/lib/postgresql/data 
+
+  redis:
+    image: redis:7
+    container_name: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+
+volumes:
+  redis-data:
+  pgdata:

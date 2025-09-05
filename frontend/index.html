@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>url shortener</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    
+    <header class="header">
+        <h2 class="title">Url Shortener</h2>
+        <a class="github-link" href="https://github.com/EnzoRochaBrito" target="_blank">
+            <div class="creator">
+                <div class="github-image">
+                    <img class="image" src="https://github.com/EnzoRochaBrito.png" alt="">
+                </div>
+                <p class="github-name">
+                    EnzoRochaBrito
+                </p>
+            </div>
+        </a>
+    </header>
+
+    <main>
+        <div class="center-panel">
+            <div class="url-panel">
+                <h4 class="panel-text">
+                    Paste your long url here!
+                </h4>
+                <input id="url-input" class="url-input" type="text">
+                <div class="btn-wrapper">
+                    <button class="submit-url" onclick="sendLongUrl()">Short Url</button>
+                </div>
+                <div class="short-url-panel">
+                    <div id="show-short">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
