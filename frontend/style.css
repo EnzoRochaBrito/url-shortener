@@ -19,16 +19,10 @@
 
 .creator {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     gap: 5px;
-}
-
-.github-image {
-    --s: 50px;
-    width: var(--s);
-    height: var(--s);
 }
 
 .image {
